@@ -1,3 +1,9 @@
+{% css %}
+.workflow-status-badge {
+    z-index: 1;
+}
+{% endcss %}
+
 {% js %}
 
 var diff = {{ diff | json_encode | raw }};
@@ -28,7 +34,7 @@ function addStatusIndicator(selector, diffInfo) {
     }
 
     if ($field.length) {
-        $field.prepend('<div id="' + selector + '-status" class="status-badge ' + diffInfo.type + '" title="' + text + '"><span class="visually-hidden">' + text + '</span></div>');
+        $field.prepend('<div id="' + selector + '-status" class="status-badge workflow-status-badge ' + diffInfo.type + '" title="' + text + '"><span class="visually-hidden">' + text + '</span></div>');
     }
 }
 
