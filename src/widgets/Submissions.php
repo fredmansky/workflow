@@ -38,6 +38,7 @@ class Submissions extends Widget
         $submissions = Submission::find()
             ->status($this->status)
             ->limit($this->limit)
+            ->siteId('*')
             ->all();
 
         return Craft::$app->getView()->renderTemplate('workflow/_widget/body', [
